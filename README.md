@@ -17,6 +17,7 @@ DB_PASSWORD=test
 6. docker compose up -d
 7. docker compose run artisan migrate
 8. docker compose run artisan db:seed --class=ProductSeeder
+9. sudo chmod -R 777 .
 
 ### Урлы
 / - каталог
