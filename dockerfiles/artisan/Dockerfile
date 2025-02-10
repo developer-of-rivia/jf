@@ -5,4 +5,4 @@ WORKDIR /var/www/jf
 RUN apt-get update && apt-get install libpq-dev -y
 RUN docker-php-ext-install pdo pdo_pgsql
 
-ENTRYPOINT ["php", "artisan"]
+ENTRYPOINT ["php", "/var/www/jf/artisan"]
