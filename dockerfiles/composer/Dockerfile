@@ -2,6 +2,6 @@ FROM composer:latest
 
 WORKDIR /var/www/jf
 
-# ENTRYPOINT ["composer"]
+CMD composer install
 
-CMD tail -f /dev/null
+ENTRYPOINT ["composer"]
