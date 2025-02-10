@@ -14,20 +14,20 @@ services:
   php:
     container_name: php
     volumes:
-      - ./src:/var/www/jf
+      - ./src:/var/www/jf:rw
     build: dockerfiles/php
 
   composer:
     container_name: composer
     build: dockerfiles/composer
     volumes:
-      - ./src:/var/www/jf
+      - ./src:/var/www/jf:rw
 
   node:
     container_name: nodejs
     build: dockerfiles/node
     volumes:
-      - ./src:/var/www/jf
+      - ./src:/var/www/jf:rw
     ports:
     - "5173:5173"
 
