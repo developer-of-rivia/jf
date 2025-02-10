@@ -6,7 +6,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
-
 Route::get('/ty', [MarketController::class, 'tyPage'])->name('market.ty');
 Route::get('/', [MarketController::class, 'market'])->name('market.market');
 Route::post('/store', [MarketController::class, 'store'])->name('market.store');
@@ -15,10 +14,10 @@ Route::get('/cart', [MarketController::class, 'index'])->name('market.index');
 Route::get('/destroy/{id}', [MarketController::class, 'destroy'])->name('market.destroy');
 
 
-Route::group(['prefix' => 'orders', 'middleware' => 'auth'], function(){
-    Route::get('/', [OrderController:: class, 'index'])->name('orders.index');
+Route::group(['prefix' => 'orders'], function(){
+    Route::get('/', [OrderController:: class, 'index'])->name('orders.index')->middleware('auth');
+    Route::delete('/', [OrderController::class, 'destroy'])->name('orders.destroy')->middleware('auth');
     Route::post('/', [OrderController::class, 'store'])->name('orders.store');
-    Route::delete('/', [OrderController::class, 'destroy'])->name('orders.destroy');
 });
 
 

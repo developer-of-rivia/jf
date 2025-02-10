@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Services\GetOrdersInfo;
+use Illuminate\Support\Facades\Redirect;
 
 class OrderController extends Controller
 {
@@ -34,7 +35,7 @@ class OrderController extends Controller
             ]);
         }
 
-        return redirect()->route('market.ty');
+        return Redirect::route('market.ty');
     }
 
     /**

@@ -39,7 +39,7 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             @foreach($order['products'] as $product)
-                                                {{ $product->product->name }},
+                                                {{ $product->product->name }} <strong class="text-white">{{ $product->product_count }} шт</strong>,
                                             @endforeach
                                         </td>
                                         <td class="px-6 py-4">
