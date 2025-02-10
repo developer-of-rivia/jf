@@ -35,7 +35,7 @@ services:
     container_name: artisan
     build: dockerfiles/artisan
     volumes:
-      - ./src:/var/www/jf
+      - ./src:/var/www/jf:rw
 
   pgsql:
     image: postgres:latest
