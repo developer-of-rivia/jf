@@ -48,6 +48,17 @@ services:
       - ./postgres/data:/var/lib/postgresql/data
       - ./postgres/dumps:/var/mydumps
 
+  # pgsql_commands:
+  #     image: postgres:latest
+  #     depends_on:
+  #       - pgsql
+  #     environment:
+  #       - POSTGRES_PASSWORD=test
+  #     entrypoint: >
+  #       bash -c "pg_dump -U postgres"
+  #     volumes:
+  #       - ./backups:/backups
+
   adminer:
     image: adminer:latest
     container_name: adminer
