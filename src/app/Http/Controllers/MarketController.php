@@ -58,7 +58,7 @@ class MarketController extends Controller
      */
     public function destroy(Request $request)
     {
-        dd();
         session()->forget('products.product-' . $request->id);
+        return redirect()->route('market.index');
     }
 }

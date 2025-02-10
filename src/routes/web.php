@@ -11,7 +11,8 @@ Route::get('/ty', [MarketController::class, 'tyPage'])->name('market.ty');
 Route::get('/', [MarketController::class, 'market'])->name('market.market');
 Route::post('/store', [MarketController::class, 'store'])->name('market.store');
 Route::get('/cart', [MarketController::class, 'index'])->name('market.index');
-Route::delete('/destroy', [MarketController::class, 'destroy'])->name('market.destroy');
+// dev destroy
+Route::get('/destroy/{id}', [MarketController::class, 'destroy'])->name('market.destroy');
 
 
 Route::group(['prefix' => 'orders', 'middleware' => 'auth'], function(){
